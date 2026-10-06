@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel de Saúde 2.0</title>
+    <!-- Folha de estilos externa vinculada -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Painel de Saúde 2.0</h1>
+
+        <!-- 1. FORMULÁRIO DE CADASTRO DO PACIENTE -->
+        <form id="form-paciente">
+            <!-- Campo Nome -->
+            <div class="campo">
+                <label for="nome">Nome:</label>
+                <input
+                    type="text"
+                    id="nome"
+                    placeholder="Ex: Maria Silva"
+                    required
+                >
+            </div>
+
+            <!-- Campo Altura -->
+            <div class="campo">
+                <label for="altura">Altura (m):</label>
+                <input
+                    type="number"
+                    id="altura"
+                    step="0.01"
+                    placeholder="Ex: 1.65"
+                    required
+                >
+            </div>
+
+            <!-- Campo Peso -->
+            <div class="campo">
+                <label for="peso">Peso (kg):</label>
+                <input
+                    type="number"
+                    id="peso"
+                    step="0.1"
+                    placeholder="Ex: 68.5"
+                    required
+                >
+            </div>
+
+            <!-- Botão de Envio -->
+            <button type="submit">Cadastrar Paciente</button>
+        </form>
+
+        <!-- 2. TABELA DE RELATÓRIO DE PACIENTES -->
+        <section class="tabela-container">
+            <h2>Relatório de Indicadores</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Altura (m)</th>
+                        <th>Peso (kg)</th>
+                        <th>IMC</th>
+                        <th>Classificação</th>
+                    </tr>
+                </thead>
+                <!-- O corpo da tabela receberá as linhas geradas pelo JS -->
+                <tbody id="corpo-tabela">
+                    <!-- As linhas serão injetadas dinamicamente aqui via JavaScript -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- 3. IMPORTAÇÃO DO SCRIPT JAVASCRIPT -->
+    <script src="app.js"></script>
+</body>
+</html>
